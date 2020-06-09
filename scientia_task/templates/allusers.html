@@ -1,0 +1,28 @@
+{% extends "templates.html" %}
+{% block title %}AllUsers{% endblock title %}
+
+{% block style %}
+<style>
+table, th, td{border:1px solid black; border-collapse:collapse;}
+</style>
+{% endblock style %}
+
+{% block body_1 %}
+<br><br><br><br><h1 align="center">All users in Database</h1>
+<table width="50%" align="center">
+    <tr>
+        <th>Name</th>
+        <th>Designation</th>
+        <th>Address</th>
+        <th>Phone</th>
+    </tr>
+{% for items in values %}
+    <tr>
+        <td>{{items.name}}</td>
+        <td>{{items.designation}}</td>
+        <td>{{items.address}}</td>
+        <td>{{items.phone}}</td>
+    </tr>
+{% endfor %}
+</table>
+{% endblock body_1 %}
